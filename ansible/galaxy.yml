@@ -1,5 +1,2 @@
-roles:
-- oefenweb.postfix
-
 collections:
 - community.kubernetes
