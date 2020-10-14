@@ -1,0 +1,41 @@
+version: "3"
+
+dotenv: ['.env']
+
+vars:
+  ansible: "ansible -i ${INVENTORY}"
+  playbook: "ansible-playbook -i ${INVENTORY}"
+
+tasks:
+  pyenv:
+    desc: build python3 virtual environment
+    cmds:
+    - python3 -m venv venv
+
+  ping:
+    desc: check nodes availability
+    cmds:
+    - "{{.ansible}} -m ping all"
+  
+  deps:
+    desc: build python and ansible dependencies
+    cmds:
+    - pip install --upgrade pip
+    - pip install wheel
+    - pip install -r ansible/requirements.txt
+    - ansible-galaxy install -r ansible/galaxy.yml
+
+  k3s-converge:
+    desc: converge nodes into k3s clusters
+    cmds:
+    - "{{.playbook}} -K ./ansible/vendor/k3s-ansible/site.yml"
+
+  k3s-cleanup:
+    desc: remove k3s installation from all nodes
+    cmds:
+    - "{{.playbook}} -K ./ansible/vendor/k3s-ansible/reset.yml"
+
+  fetch-kubeconfig:
+    desc: fetch configuration from master node
+    cmds:
+    - "{{.playbook}} ./ansible/fetch-kube-config.yml"
