@@ -18,7 +18,7 @@ spec:
     version: 2.13.0
   values:
     controller:
-      ingressClass: ingress
+      ingressClass: nginx
       replicaCount: 1
       service:
         type: LoadBalancer
@@ -41,7 +41,7 @@ spec:
       extraArgs:
         default-ssl-certificate: "networking/acme-crt-secret"
       nodeSelector:
-        kubernetes.io/name: io
+        kubernetes.io/hostname: io
       resources:
         requests:
           memory: 250Mi
