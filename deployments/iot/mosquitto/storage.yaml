@@ -6,8 +6,8 @@ metadata:
   namespace: iot
 spec:
   accessModes:
-    - ReadWriteMany
-  storageClassName: nfs-data
+    - ReadWriteOnce
+  storageClassName: longhorn-sc
   resources:
     requests:
-      storage: 1Gi
+      storage: 2Gi
