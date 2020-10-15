@@ -6,7 +6,7 @@ metadata:
   namespace: iot
   annotations:
     fluxcd.io/ignore: "false"
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
 spec:
   strategy:
     type: Replace
