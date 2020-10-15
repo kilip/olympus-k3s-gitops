@@ -20,8 +20,6 @@ spec:
       kubernetes.io/hostname: io
     service:
       type: LoadBalancer
-      externalIPs:
-      - 192.168.10.21
       externalTrafficPolicy: Local
     persistence:
       enabled: true
