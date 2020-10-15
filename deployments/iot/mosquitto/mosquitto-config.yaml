@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: mosquitto
-  namespace: iot
-data:
-  password.conf: |
-    mqtt:$6$Y55f5/GXaYwNah4D$LS77MH5OgjFUoyzw/sfRtdDw7a650df6ii4JaNuv0apu+FUhNJmq+Sz3LUbhfA2aEfA0jrRR+4xSrTaEqd2UAQ==
