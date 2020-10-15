@@ -19,7 +19,7 @@ spec:
   values:
     controller:
       ingressClass: ingress
-      replicaCount: 2
+      replicaCount: 1
       service:
         type: LoadBalancer
         externalIPs:
@@ -40,16 +40,8 @@ spec:
           namespace: networking
       extraArgs:
         default-ssl-certificate: "networking/acme-crt-secret"
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app.kubernetes.io/name
-                operator: In
-                values:
-                - nginx-ingress
-            topologyKey: "kubernetes.io/hostname"
+      nodeSelector:
+        kubernetes.io/name: io
       resources:
         requests:
           memory: 250Mi
