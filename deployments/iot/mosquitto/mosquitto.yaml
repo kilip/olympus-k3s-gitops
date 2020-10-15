@@ -20,10 +20,11 @@ spec:
       kubernetes.io/hostname: io
     service:
       type: LoadBalancer
-      loadBalancerIP: 192.168.10.2
+      externalIPs:
+      - 192.168.10.21
+      externalTrafficPolicy: Local
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
-    customConfig: |
-      listener 1883
-      password_file /mosquitto/config/password.conf
+    #customConfig: |
+      
