@@ -26,3 +26,8 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "nginx"
       host: "longhorn.itstoni.com"
+    taintToleration:
+      - key: beta.kubernetes.io/arch
+        operator: Equal
+        value: arm64
+        effect: NoSchedule
