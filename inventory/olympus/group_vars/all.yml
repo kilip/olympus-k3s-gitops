@@ -7,11 +7,9 @@ master_ip: "{{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['m
 extra_server_args: |
   --disable traefik \
   --disable metrics-server \
-  --disable local-storage \
-  --flannel-backend host-gw \
-  --kubelet-arg "feature-gates=ExternalPolicyForExternalIP=true"
-extra_agent_args: |
-  --kubelet-arg="feature-gates=ExternalPolicyForExternalIP=true"
+  --disable local-storage
+#extra_agent_args: |
+#  --kubelet-arg="feature-gates=ExternalPolicyForExternalIP=true"
 
 # flux setup
 flux_values: "../deployments/flux/flux-values.yaml"

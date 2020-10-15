@@ -39,7 +39,18 @@ tasks:
     desc: remove k3s installation from all nodes
     cmds:
     - "{{.playbook}} -K ./ansible/vendor/k3s-ansible/reset.yml"
+  
+  k3s-restart-service:
+    desc: restart k3s service on nodes
+    cmds:
+    - "{{.ansible}} -K -b -a 'service k3s restart' master"
+    - "{{.ansible}} -K -b -a 'service' k3s-node restart node"
 
+  reboot:
+    desc: reboot all k3s nodes
+    cmds:
+    - "{{.ansible}} -K -b -a 'reboot' k3s_cluster"
+    
   fetch-kubeconfig:
     desc: fetch configuration from master node
     cmds:
@@ -55,3 +66,8 @@ tasks:
     cmds:
     - "{{.kubectl}} -n flux patch deployment flux -p \"$(cat ./patch/flux.yaml)\""
     - "{{.kubectl}} -n flux patch deployment helm-operator -p \"$(cat ./patch/helm-operator.yaml)\""
+
+  git-push-sync:
+    desc: push and sync to git master branch
+    cmds:
+    - "git push origin master && fluxctl sync"
