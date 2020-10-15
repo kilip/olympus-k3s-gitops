@@ -13,7 +13,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 192.168.100.2
-    path: /mnt/hd1/data
+    path: /mnt/hd1/olympus
   mountOptions:
     - tcp
     - intr
