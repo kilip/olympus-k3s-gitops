@@ -1,6 +1,9 @@
 spec:
+  replica: 1
   template:
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: io
       dnsConfig:
         options:
           - name: ndots
