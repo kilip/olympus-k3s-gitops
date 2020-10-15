@@ -8,8 +8,7 @@ metadata:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "false"
 spec:
-  strategy:
-    type: Replace
+  replica: 1
   releaseName: mosquitto
   helmVersion: v3
   chart:
