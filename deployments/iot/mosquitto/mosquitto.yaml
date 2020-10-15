@@ -18,7 +18,7 @@ spec:
     version: 0.3.3
   values:
     nodeSelector:
-      beta.kubernetes.io/hostname: io
+      kubernetes.io/hostname: io
     service:
       type: LoadBalancer
       loadBalancerIP: 192.168.10.2
