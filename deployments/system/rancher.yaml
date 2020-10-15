@@ -12,7 +12,7 @@ spec:
   helmVersion: v3
   chart:
     repository: https://releases.rancher.com/server-charts/stable
-    name: rancher-stable
+    name: rancher
     version: 2.4.8
   values:
     hostname: "rancher.itstoni.com"
