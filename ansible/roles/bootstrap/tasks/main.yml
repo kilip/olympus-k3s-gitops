@@ -1,0 +1,24 @@
+- name: get flux stats
+  community.kubernetes.k8s_info:
+    name: flux
+    namespace: flux
+    kind: deployment
+  register: stat
+
+- name: include flux tasks
+  include: flux.yml
+  when: stat.resources == []
+
+
+- name: get helm-operator stats
+  community.kubernetes.k8s_info:
+    name: helm-operator
+    namespace: flux
+    kind: deployment
+  register: stat
+
+- name: deploy helm-operator
+  include: helm-operator.yml
+  when: stat.resources == []
+#- name: include secrets tasks
+#  include: secrets.yml

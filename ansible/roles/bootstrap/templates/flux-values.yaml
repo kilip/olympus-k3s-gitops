@@ -1,9 +1,9 @@
 git:
-  url: "git@github.com:kilip/olympus-k3s-gitops.git"
-  branch: master
-  path: deployments
-  user: "onedr0p"
-  email: "onedr0p@users.noreply.github.com"
+  url: "{{ flux_git_url }}"
+  branch: "{{ flux_git_branch }}"
+  path: "{{ flux_git_path }}"
+  user: "{{ flux_git_user }}"
+  email: "{{ flux_git_user }}@users.noreply.github.com"
 image:
   repository: docker.io/fluxcd/flux
   tag: 1.21.0

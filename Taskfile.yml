@@ -3,9 +3,14 @@ version: "3"
 dotenv: ['.env']
 
 vars:
+  kubeconfig: "{{.TASKFILE_DIR}}/kubeconfig"
   ansible: "ansible -i ${INVENTORY}"
-  playbook: "ansible-playbook -i ${INVENTORY}"
+  playbook: "K8S_AUTH_KUBECONFIG=$PWD/kubeconfig ansible-playbook -i ${INVENTORY}"
+  kubectl: "KUBECONFIG=$PWD/kubeconfig kubectl"
 
+#env:
+#  KUBECONFIG: "{{.TASKFILE_DIR}}/kubeconfig"
+#  K8S_AUTH_KUBECONFIG: "{{.TASKFILE_DIR}}/kubeconfig"
 tasks:
   pyenv:
     desc: build python3 virtual environment
@@ -39,3 +44,14 @@ tasks:
     desc: fetch configuration from master node
     cmds:
     - "{{.playbook}} ./ansible/fetch-kube-config.yml"
+
+  bootstrap:
+    desc: bootstrap flux with helm-operator
+    cmds:
+    - "{{.playbook}} ./ansible/bootstrap.yml"
+
+  patch:
+    desc: patch flux
+    cmds:
+    - "{{.kubectl}} -n flux patch deployment flux -p \"$(cat ./patch/flux.yaml)\""
+    - "{{.kubectl}} -n flux patch deployment helm-operator -p \"$(cat ./patch/helm-operator.yaml)\""

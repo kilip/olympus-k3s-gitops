@@ -1,3 +1,0 @@
-- hosts: all
-  tasks:
-    - debug: var=extra_server_args

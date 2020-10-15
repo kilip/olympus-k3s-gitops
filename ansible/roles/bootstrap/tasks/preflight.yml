@@ -1,0 +1,9 @@
+- name: assert required configuration
+  assert:
+    that: "{{ item }} is defined"
+    fail_msg: "{{ item }} value should be configured"
+  with_items:
+    - flux_git_url
+    - flux_git_branch
+    - flux_git_path
+    - flux_git_user
