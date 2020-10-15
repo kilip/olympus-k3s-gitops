@@ -1,0 +1,1 @@
+{"jobID":"bb4dd20d-17b9-2774-3dd5-eefdf42f462c","spec":{"type":"policy","cause":{"Message":"","User":"Anthonius Munthi \u003cme@itstoni.com\u003e"},"spec":{"iot:helmrelease/mosquitto":{"add":{"automated":"true"},"remove":{}}}},"result":null}
