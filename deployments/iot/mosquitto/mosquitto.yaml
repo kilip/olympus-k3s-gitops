@@ -20,7 +20,6 @@ spec:
       kubernetes.io/hostname: io
     service:
       type: ClusterIP
-      externalTrafficPolicy: Local
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
