@@ -19,7 +19,7 @@ spec:
     nodeSelector:
       kubernetes.io/hostname: io
     service:
-      type: LoadBalancer
+      type: ClusterIP
       annotations:
         metallb.universe.tf/allow-shared-ip: io
     persistence:
