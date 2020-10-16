@@ -19,17 +19,18 @@ spec:
     defaultSettings:
       defaultReplicaCount: 1
       createDefaultDiskLabeledNodes: true
-      backupTarget: nfs://192.168.100.2:/mnt/hd1/k8s
+      backupTarget: nfs://192.168.100.2:/mnt/hd1/k8s/longhorn
       defaultDataPath: /srv/longhorn
+      taintToleration:
+        tolerations:
+        - key: kubernetes.io/arch
+          operator: Equal
+          value: arm64
+          effect: NoSchedule
     csi:
       resizerReplicaCount: 1
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: "traefik"
+        kubernetes.io/ingress.class: "nginx"
       host: "longhorn.itstoni.com"
-    taintToleration:
-      - key: beta.kubernetes.io/arch
-        operator: Equal
-        value: arm64
-        effect: NoSchedule
