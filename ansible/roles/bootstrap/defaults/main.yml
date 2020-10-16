@@ -1,3 +1,4 @@
 cf_api_key: "{{ lookup('env', 'CF_API_KEY') }}"
 
-_flux_identity_cmd: "KUBECONFIG={{ lookup('env', 'PWD') }}/kubeconfig fluxctl --k8s-fwd-ns flux identity"
+_pwd: "{{ lookup('env', 'PWD') }}"
+_flux_identity_cmd: "KUBECONFIG={{ _pwd }}/kubeconfig fluxctl --k8s-fwd-ns flux identity"

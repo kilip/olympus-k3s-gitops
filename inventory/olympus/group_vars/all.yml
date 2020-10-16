@@ -1,4 +1,5 @@
 ---
+_pwd: "{{ lookup('env', 'PWD') }}"
 # k3s nodes setup
 k3s_version: v1.18.8+k3s1
 ansible_user: toni
@@ -12,3 +13,11 @@ extra_server_args: |
 # flux setup
 flux_values: "../deployments/flux/flux-values.yaml"
 flux_helm_operator_values: "../deployments/flux/helm-operator-values.yaml"
+
+node_labels:
+  - node: io
+    key: node.longhorn.io/create-default-disk
+    value: "true"
+  - node: atlas
+    key: node.longhorn.io/default-node-tags
+    value: '["fast","storage"]'
