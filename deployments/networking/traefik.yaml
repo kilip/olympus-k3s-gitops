@@ -31,5 +31,5 @@ spec:
       auth:
         basic:
           admin: "$apr1$nm9IfRg3$INl.uQ2TN4BQco/PfdNlq1" 
-    loadBalancerIP: 192.168.10.2
+    loadBalancerIP: 192.168.10.21
     logLevel: debug
