@@ -12,7 +12,7 @@ spec:
   releaseName: tasmo-admin
   helmVersion: v3
   chart:
-    repository: https://storage.googleapis.com/t3n-helm-charts
+    repository: https://charts.itstoni.com
     name: tasmo-admin
     version: 1.7.0
   values:
