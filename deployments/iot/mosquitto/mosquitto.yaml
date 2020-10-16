@@ -13,7 +13,7 @@ spec:
   helmVersion: v3
   chart:
     repository: https://storage.googleapis.com/t3n-helm-charts
-    name: mosquitto
+    name: t3n/mosquitto
     version: 2.0.0
   values:
     nodeSelector:
