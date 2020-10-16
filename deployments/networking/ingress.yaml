@@ -23,7 +23,7 @@ spec:
       service:
         type: LoadBalancer
         externalIPs:
-        - 192.168.10.2
+        - 192.168.10.21
         externalTrafficPolicy: Local
       publishService:
         enabled: true
