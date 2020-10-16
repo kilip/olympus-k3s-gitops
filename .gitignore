@@ -1,3 +1,4 @@
 .env
 secrets
 scratches
+kubeconfig
