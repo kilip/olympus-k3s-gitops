@@ -25,11 +25,14 @@ spec:
         enabled: true
       serviceMonitor:
         enabled: true
-    dashboard:
-      enabled: true
-      serviceType: LoadBalancer
-      auth:
-        basic:
-          admin: "$apr1$nm9IfRg3$INl.uQ2TN4BQco/PfdNlq1" 
-    loadBalancerIP: 192.168.10.21
+    ingressRoute:
+      dashboard:
+        enabled: true
+        #auth:
+        #  basic:
+        #    admin: "$apr1$nm9IfRg3$INl.uQ2TN4BQco/PfdNlq1"
+    service:
+      spec:
+        type: LoadBalancer
+        loadBalancerIP: 192.168.10.2
     logLevel: debug
