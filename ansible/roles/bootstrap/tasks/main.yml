@@ -20,5 +20,6 @@
 - name: deploy helm-operator
   include: helm-operator.yml
   when: stat.resources == []
+
 #- name: include secrets tasks
 #  include: secrets.yml
