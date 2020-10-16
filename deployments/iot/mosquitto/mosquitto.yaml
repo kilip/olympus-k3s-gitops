@@ -25,6 +25,13 @@ spec:
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
-    authentication:
-      passwordEntries: |
-        mqtt:$6$AEuVLzJVEoVxTCAT$0U7sFehXmvBI9xIbqkEa0jM0ExQidD0QNX/PvwPQZF8GpmXTB5z7l5rRE7/x5Rq/+FpmMpMZTL25i8uu2fOTOg==
+    #authentication:
+    #  passwordEntries: |
+    #    mqtt:$6$AEuVLzJVEoVxTCAT$0U7sFehXmvBI9xIbqkEa0jM0ExQidD0QNX/PvwPQZF8GpmXTB5z7l5rRE7/x5Rq/+FpmMpMZTL25i8uu2fOTOg==
+    config: |
+      persistence true
+      persistence_location /mosquitto/data/
+      log_dest stdout
+      listener 1883
+      listener 9090
+      protocol websockets
