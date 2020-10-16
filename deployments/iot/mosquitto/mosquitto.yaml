@@ -20,6 +20,8 @@ spec:
       kubernetes.io/hostname: io
     service:
       type: ClusterIP
+      annotations: {}
+      metallb.universe.tf/allow-shared-ip: io
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
