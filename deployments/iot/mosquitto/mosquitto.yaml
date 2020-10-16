@@ -24,4 +24,3 @@ spec:
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
-      
