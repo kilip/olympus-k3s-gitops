@@ -21,12 +21,10 @@ spec:
       ingressClass: nginx
       replicaCount: 1
       service:
-        type: ClusterIP
-        annotations:
-          metallb.universe.tf/allow-shared-ip: io
-        #externalIPs:
-        #- 192.168.10.21
-        #externalTrafficPolicy: Local
+        type: LoadBalancer
+        externalIPs:
+        - 192.168.10.21
+        externalTrafficPolicy: Local
       publishService:
         enabled: true
       config:
