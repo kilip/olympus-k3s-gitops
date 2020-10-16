@@ -19,8 +19,9 @@ spec:
     nodeSelector:
       kubernetes.io/hostname: io
     service:
-      type: LoadBalancer
-      loadBalancerIP: 192.168.10.22
+      type: ClusterIP
+      annotations:
+        metallb.universe.tf/allow-shared-ip: io
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
