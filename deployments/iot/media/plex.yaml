@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: plex
-  namespace: default
+  namespace: iot
   annotations:
     replicas-max: "1"
     fluxcd.io/ignore: "false"
@@ -50,8 +50,8 @@ spec:
       externalTrafficPolicy: Local
     persistence:
       config:
-        storageClass: "longhorn"
-        size: 250Gi
+        storageClass: "nfs-client"
+        size: 5Gi
         accessMode: ReadWriteOnce
       transcode:
         enabled: false
