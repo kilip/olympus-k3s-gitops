@@ -41,10 +41,8 @@ spec:
         metallb.universe.tf/allow-shared-ip: io
     serviceUDP:
       type: LoadBalancer
-      annotations:
-        metallb.universe.tf/allow-shared-ip: io
       externalIPs:
-      - 192.168.10.21
+      - 192.168.10.25
       externalTrafficPolicy: Local
     persistence:
       config:
