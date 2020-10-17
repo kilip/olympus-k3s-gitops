@@ -17,6 +17,9 @@ spec:
     name: emby
     version: 1.0.0
   values:
+    service:
+      type: ClusterIP
+      port: 80
     persistence:
       enabled: true
       existingClaim: emby-pvc
