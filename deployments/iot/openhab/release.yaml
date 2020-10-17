@@ -14,7 +14,7 @@ spec:
   chart:
     repository: https://charts.itstoni.com
     name: openhab
-    version: 1.0.0
+    version: 1.0.1
   values:
     persistence:
       enabled: True
@@ -28,7 +28,6 @@ spec:
       host: openhab.itstoni.com
     environment:
       timezone: "Asia/Makassar"
-
     gitConfig:
       enabled: True
       repoUrl: "git@github.com:kilip/olympus-openhab.git"
