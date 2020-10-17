@@ -20,7 +20,7 @@ spec:
       enabled: True
       existingClaim: openhab-pvc
     nodeSelector:
-      kubernetes.io/hostname: apolo
+      beta.kubernetes.io/arch: amd64
     ingress:
       enabled: True
       annotations:
