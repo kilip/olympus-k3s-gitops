@@ -36,8 +36,6 @@ spec:
     timezone: "Asia/Makassar"
     serviceTCP:
       type: LoadBalancer
-      externalIPs:
-      - 192.168.10.21
       externalTrafficPolicy: Local
       annotations:
         metallb.universe.tf/allow-shared-ip: io
