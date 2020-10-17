@@ -31,5 +31,5 @@ spec:
 
     gitConfig:
       enabled: True
-      repoUrl: "git@github.com:kilip/olympus-openhab.git"
+      repoUrl: "git@github.com.:kilip/olympus-openhab.git"
       secretName: git-credentials
