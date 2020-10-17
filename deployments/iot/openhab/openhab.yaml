@@ -14,7 +14,7 @@ spec:
   chart:
     repository: https://charts.itstoni.com
     name: openhab
-    version: 1.0.1
+    version: 1.0.2
   values:
     persistence:
       enabled: True
@@ -32,3 +32,4 @@ spec:
       enabled: True
       repoUrl: "git@github.com:kilip/olympus-openhab.git"
       secretName: git-credentials
+    openhabCloudSecretName: "openhab-cloud-secret"

@@ -14,10 +14,8 @@ spec:
   chart:
     repository: https://charts.itstoni.com/
     name: mosquitto
-    version: 1.0.0
+    version: 1.0.1
   values:
-    nodeSelector:
-      kubernetes.io/hostname: io
     service:
       type: LoadBalancer
       annotations:
@@ -25,5 +23,6 @@ spec:
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
-    passwordEntries: |
-      mqtt:$6$UWxhmhWYEY1lQALt$yBcPltbdYN3exQxcZuaBL9hHq99fN0Se4oQcNh4xEhIdPE+Z9bnPn9maoS/WqqshAtn3QliIQddCVvpd9C7ZNQ==
+    auth:
+      secretName: mosquitto-auth
+      secretKey: mqtt-password
