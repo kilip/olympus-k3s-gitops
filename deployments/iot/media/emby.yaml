@@ -24,3 +24,10 @@ spec:
       - name: media
         claimName: nfs-media-pvc
         mountPath: /mnt/media
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      host: emby.itstoni.com
+    nodeSelector:
+      beta.kubernetes.io/arch: amd64
