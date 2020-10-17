@@ -25,3 +25,10 @@ spec:
       annotations:
         kubernetes.io/ingress.class: nginx
       host: openhab.itstoni.com
+    environment:
+      timezone: "Asia/Makassar"
+
+    gitConfig:
+      enabled: True
+      repoUrl: "git@github.com:kilip/olympus-openhab.git"
+      secretName: git-credentials
