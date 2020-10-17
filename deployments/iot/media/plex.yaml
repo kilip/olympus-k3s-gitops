@@ -24,7 +24,7 @@ spec:
       pullPolicy: IfNotPresent
     # hostNetwork: true
     ingress:
-      enabled: false
+      enabled: true
       annotations:
         kubernetes.io/ingress.class: "nginx"
       hosts:
@@ -48,14 +48,14 @@ spec:
         size: 5Gi
         accessMode: ReadWriteOnce
       transcode:
-        enabled: false
-        emptyDir:
-          medium: "Memory"
+        enabled: true
+        claimName: plex-transcode-pvc
       data:
-        enabled: false
-      extraMounts:
-      - name: media
+        enabled: true
         claimName: nfs-media-pvc
+      #extraMounts:
+      #- name: media
+      #  claimName: nfs-media-pvc
     #logging:
     #  promtail:
     #    enabled: true
