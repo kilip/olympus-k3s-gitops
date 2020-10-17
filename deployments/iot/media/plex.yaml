@@ -26,7 +26,7 @@ spec:
     ingress:
       enabled: false
       annotations:
-        kubernetes.io/ingress.class: "external"
+        kubernetes.io/ingress.class: "nginx"
       hosts:
       - "plex.itstoni.com"
       tls:
