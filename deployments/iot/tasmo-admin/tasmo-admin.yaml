@@ -1,0 +1,27 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: tasmo-admin
+  namespace: iot
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "false"
+spec:
+  replica: 1
+  releaseName: tasmo-admin
+  helmVersion: v3
+  chart:
+    repository: https://charts.itstoni.com
+    name: tasmo-admin
+  values:
+    persistence:
+      enabled: True
+      existingClaim: tasmota-pvc
+    nodeSelector:
+      kubernetes.io/hostname: apolo
+    ingress:
+      enabled: True
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      host: tasmota.itstoni.com
