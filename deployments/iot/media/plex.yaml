@@ -32,7 +32,7 @@ spec:
       tls:
       - hosts:
         - "plex.itstoni.com"
-    advertiseIp: "http://192.168.10.21:32400"
+    advertiseIp: "http://192.168.10.25:32400"
     timezone: "Asia/Makassar"
     serviceTCP:
       type: LoadBalancer
@@ -41,8 +41,7 @@ spec:
         metallb.universe.tf/allow-shared-ip: io
     serviceUDP:
       type: LoadBalancer
-      externalIPs:
-      - 192.168.10.25
+      loadBalancerIP: 192.168.10.25
       externalTrafficPolicy: Local
     persistence:
       config:
