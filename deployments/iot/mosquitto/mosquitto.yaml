@@ -14,6 +14,7 @@ spec:
   chart:
     repository: https://charts.itstoni.com/
     name: mosquitto
+    version: 1.0.0
   values:
     nodeSelector:
       kubernetes.io/hostname: io
