@@ -18,6 +18,7 @@ spec:
   values:
     service:
       type: LoadBalancer
+      externalTrafficPolicy: Local
       annotations:
         metallb.universe.tf/allow-shared-ip: iot
     persistence:
