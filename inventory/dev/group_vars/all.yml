@@ -1,0 +1,23 @@
+---
+_pwd: "{{ lookup('env', 'PWD') }}"
+# k3s nodes setup
+k3s_version: v1.19.3+k3s1
+ansible_user: toni
+systemd_dir: /etc/systemd/system
+master_ip: "{{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0]) }}"
+extra_server_args: |
+  --tls-san k3s.itstoni.com --no-deploy traefik --no-deploy servicelb --no-deploy metrics-server --no-deploy local-storage --flannel-backend=host-gw
+#extra_agent_args: |
+#  --kubelet-arg="feature-gates=ExternalPolicyForExternalIP=true"
+
+# flux setup
+flux_values: "../deployments/flux/flux-values.yaml"
+flux_helm_operator_values: "../deployments/flux/helm-operator-values.yaml"
+
+node_labels:
+  - node: io
+    key: node.longhorn.io/create-default-disk
+    value: "true"
+  - node: atlas
+    key: node.longhorn.io/default-node-tags
+    value: '["fast","storage"]'
