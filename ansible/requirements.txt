@@ -1,8 +1,0 @@
-ansible
-molecule
-molecule[lint]
-docker
-kubernetes
-openshift
-python-vagrant
-passlib

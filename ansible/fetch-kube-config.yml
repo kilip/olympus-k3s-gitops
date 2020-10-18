@@ -1,7 +1,0 @@
-- hosts: master
-  tasks:
-    - name: fetching kubeconfig to working directory
-      fetch:
-        src: "{{ lookup('env','HOME') }}/.kube/config"
-        dest: "{{ lookup('env','PWD') }}/kubeconfig"
-        flat: yes

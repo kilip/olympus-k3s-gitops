@@ -1,9 +1,0 @@
-- hosts: localhost
-  connection: local
-  gather_facts: false
-  tasks:
-    - debug:
-        msg: "kubeconfig: {{ lookup('env', 'K8S_AUTH_KUBECONFIG') }}"
-    - name: include bootstrap roles
-      include_role:
-        name: bootstrap
