@@ -66,6 +66,16 @@ tasks:
       --repository=olympus-k3s-gitops \
       --branch=dev \
       --path=${GOTK_PATH}
+  
+  gpg-key:
+    desc: export gpg keys
+    cmds:
+      - |
+          gpg --export-secret-keys \
+          --armor ${GPG_KEY} |
+          kubectl create secret generic sops-gpg \
+          --namespace=gotk-system \
+          --from-file=sops.asc=/dev/stdin 
 
   patch:
     desc: patch flux
