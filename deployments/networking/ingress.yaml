@@ -23,9 +23,8 @@ spec:
       service:
         type: LoadBalancer
         loadBalancerIP: 192.168.10.21
-        externalTrafficPolicy: Local
         annotations:
-          metallb.universe.tf/allow-shared-ip: io
+          metallb.universe.tf/allow-shared-ip: iot
       publishService:
         enabled: true
       config:

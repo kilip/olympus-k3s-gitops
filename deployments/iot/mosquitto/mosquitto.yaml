@@ -19,7 +19,7 @@ spec:
     service:
       type: LoadBalancer
       annotations:
-        metallb.universe.tf/allow-shared-ip: io
+        metallb.universe.tf/allow-shared-ip: iot
     persistence:
       enabled: true
       existingClaim: mosquitto-pvc
