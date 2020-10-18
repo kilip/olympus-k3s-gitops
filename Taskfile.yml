@@ -25,10 +25,7 @@ tasks:
   deps:
     desc: build python and ansible dependencies
     cmds:
-    - pip install --upgrade pip
-    - pip install wheel
-    - pip install -r ansible/requirements.txt
-    - ansible-galaxy install -r ansible/galaxy.yml
+    - pip install -r ansible/vendor/kubespray/requirements.txt
 
   k3s-converge:
     desc: converge nodes into k3s clusters

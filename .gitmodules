@@ -1,3 +1,8 @@
 [submodule "ansible/vendor/k3s-ansible"]
 	path = ansible/vendor/k3s-ansible
 	url = https://github.com/rancher/k3s-ansible
+	depth=1
+[submodule "ansible/vendor/kubespray"]
+	path = ansible/vendor/kubespray
+	url = https://github.com/kubernetes-sigs/kubespray.git
+	depth=1
