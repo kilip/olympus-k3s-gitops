@@ -19,8 +19,8 @@ spec:
     persistence:
       enabled: True
       existingClaim: tasmota-pvc
-    nodeSelector:
-      kubernetes.io/hostname: apolo
+    #nodeSelector:
+    #  kubernetes.io/hostname: apolo
     ingress:
       enabled: True
       annotations:
