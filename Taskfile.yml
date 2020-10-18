@@ -57,9 +57,15 @@ tasks:
     - "{{.playbook}} ./ansible/fetch-kube-config.yml"
 
   bootstrap:
-    desc: bootstrap flux with helm-operator
+    desc: runs gotk bootstrap
     cmds:
-    - "{{.playbook}} ./ansible/bootstrap.yml"
+    - echo "${GITHUB_USER}"
+    - |
+      gotk bootstrap github \
+      --owner=${GITHUB_USER} \
+      --repository=olympus-k3s-gitops \
+      --branch=dev \
+      --path=${GOTK_PATH}
 
   patch:
     desc: patch flux
