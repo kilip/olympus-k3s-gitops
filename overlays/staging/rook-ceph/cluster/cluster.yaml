@@ -159,15 +159,15 @@ spec:
     mon:
       requests:
           cpu: 35m
-          memory: 800Mi
+          memory: 512Mi
       limits:
         memory: 1024Mi
     osd:
       requests:
         cpu: "35m"
-        memory: "2048Mi"
+        memory: "512Mi"
       limits:
-        memory: "4096Mi"
+        memory: "1024Mi"
     # rbdmirror:
     #   requests:
     #       cpu: 25m
