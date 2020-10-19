@@ -30,12 +30,12 @@ tasks:
     - pip install -r ansible/requirements.txt
     - ansible-galaxy install -r ansible/galaxy.yml
 
-  k3s-converge:
+  converge:
     desc: converge nodes into k3s clusters
     cmds:
-    - "{{.playbook}} -K ./ansible/vendor/k3s-ansible/site.yml"
+    - "{{.playbook}} -K ./ansible/converge.yml"
 
-  k3s-cleanup:
+  cleanup:
     desc: remove k3s installation from all nodes
     cmds:
     - "{{.playbook}} -K ./ansible/vendor/k3s-ansible/reset.yml"

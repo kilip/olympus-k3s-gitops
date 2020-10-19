@@ -1,5 +1,0 @@
-- hosts: all
-  tasks:
-    - name: "fix resolv.conf file"
-      shell: "ln -sfn /run/systemd/resolve/resolv.conf /etc/resolv.conf"
-      changed_when: false

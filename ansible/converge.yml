@@ -1,0 +1,10 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: "fix resolv.conf file"
+      shell: "ln -sfn /run/systemd/resolve/resolv.conf /etc/resolv.conf"
+      changed_when: false
+      warn: false
+  
+- name: "include k3s-clusters tasks"
+  import_playbook: "{{ playbook_dir }}/vendor/k3s-ansible/site.yml"
