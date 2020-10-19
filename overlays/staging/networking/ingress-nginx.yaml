@@ -21,7 +21,7 @@ spec:
       version: 3.7.1
       sourceRef:
         kind: HelmRepository
-        name: ingress-nginx
+        name: nginx-ingress
         namespace: networking
       interval: 1m
   values:
