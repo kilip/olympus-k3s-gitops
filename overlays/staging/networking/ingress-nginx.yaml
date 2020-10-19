@@ -30,7 +30,6 @@ spec:
       replicaCount: 1
       service:
         type: LoadBalancer
-        externalTrafficPolicy: Local
         loadBalancerIP: 10.60.0.10
       publishService:
         enabled: true
@@ -40,15 +39,13 @@ spec:
         use-proxy-protocol: "false"
         proxy-body-size: "0"
         use-forwarded-headers: "true"
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
-          namespace: networking
+      #metrics:
+      #  enabled: true
+      #  serviceMonitor:
+      #    enabled: true
+      #    namespace: networking
       extraArgs:
         default-ssl-certificate: "networking/acme-crt-secret"
-      nodeSelector:
-        kubernetes.io/hostname: io
       resources:
         requests:
           memory: 250Mi
