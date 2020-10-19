@@ -40,6 +40,11 @@ tasks:
     cmds:
     - "{{.playbook}} -K ./ansible/vendor/k3s-ansible/reset.yml"
   
+  reconcile:
+    desc: reconcile with git source
+    cmds:
+    - "gotk reconcile source git gotk-system"
+
   k3s-restart-service:
     desc: restart k3s service on nodes
     cmds:
