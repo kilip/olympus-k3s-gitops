@@ -17,13 +17,11 @@ metadata:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "false"
 spec:
+  interval: 1m
   releaseName: metallb
-  helmVersion: v3
-  rollback:
-    enable: false
   chart:
     spec:
-      sourceFrom:
+      sourceRef:
         repository: https://charts.bitnami.com/bitnami
         name: metallb
         namespace: networking
