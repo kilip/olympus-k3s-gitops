@@ -11,9 +11,6 @@ metadata:
 #    nginx.ingress.kubernetes.io/server-snippet: |
 #      proxy_ssl_verify off;
 spec:
-  tls:
-   - hosts:
-     - rook.itstoni.com
   rules:
   - host: rook.itstoni.com
     http:
