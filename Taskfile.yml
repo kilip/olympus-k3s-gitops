@@ -39,7 +39,18 @@ tasks:
     desc: remove k3s installation from all nodes
     cmds:
     - "{{.playbook}} -K ./ansible/vendor/k3s-ansible/reset.yml"
-  
+
+  bootstrap:
+    desc: runs gotk bootstrap
+    cmds:
+    - echo "${GITHUB_USER}"
+    - |
+      gotk bootstrap github \
+      --owner=${GITHUB_USER} \
+      --repository=olympus-k3s-gitops \
+      --branch=dev \
+      --path=${GOTK_PATH}
+
   reconcile:
     desc: reconcile with git source
     cmds:
@@ -60,17 +71,6 @@ tasks:
     desc: fetch configuration from master node
     cmds:
     - "{{.playbook}} ./ansible/fetch-kube-config.yml"
-
-  bootstrap:
-    desc: runs gotk bootstrap
-    cmds:
-    - echo "${GITHUB_USER}"
-    - |
-      gotk bootstrap github \
-      --owner=${GITHUB_USER} \
-      --repository=olympus-k3s-gitops \
-      --branch=dev \
-      --path=${GOTK_PATH}
   
   gpg-key:
     desc: export gpg keys
