@@ -30,7 +30,7 @@ spec:
       replicaCount: 1
       service:
         type: LoadBalancer
-        loadBalancerIP: 10.60.0.51
+        loadBalancerIP: 10.60.0.21
       publishService:
         enabled: true
       config:
