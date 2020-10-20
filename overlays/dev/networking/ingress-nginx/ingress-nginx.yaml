@@ -31,6 +31,7 @@ spec:
       service:
         type: LoadBalancer
         loadBalancerIP: 10.60.0.21
+        externalTrafficPolicy: local
       publishService:
         enabled: true
       config:
