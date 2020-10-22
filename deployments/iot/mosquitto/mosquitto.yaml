@@ -26,3 +26,5 @@ spec:
     auth:
       secretName: mosquitto-auth
       secretKey: mqtt-password
+    nodeSelector:
+      beta.kubernetes.io/arch: "amd64"
